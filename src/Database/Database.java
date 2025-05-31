@@ -4,17 +4,15 @@
  */
 package database;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
+import java.sql.*;
 
 /**
  *
- * @author NITRO V 15
+ * @author sandhya sapkota
  */
-    public interface Database {
+public interface Database {
     Connection openConnection();
     void closeConnection(Connection conn);
     ResultSet runQuery(Connection conn, String query);
     int executeUpdate(Connection conn, String query);
 };
-

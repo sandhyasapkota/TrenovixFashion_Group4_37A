@@ -6,16 +6,22 @@ package controller;
 
 import dao.UserDao;
 import view.SignUp;
-import view.Login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 // import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import model.User;
+import view.Login;
+
+/**
+ *
+ * @author sandhya sapkota
+ */
 
 public class SignupController {
     private final UserDao userDao = new UserDao();
     private final SignUp userView;
+    private final Validation validation = new Validation();
 
     public SignupController(SignUp userView) {
         this.userView = userView;
@@ -33,52 +39,42 @@ public class SignupController {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                // Get form data
-                String username = userView.getUsernameField().getText().trim();
-                String email = userView.getEmailField().getText().trim();
+                String name = userView.getUsernameField().getText();
+                String email = userView.getEmailField().getText();
                 String password = userView.getPasswordField().getText();
-                String confirmPassword = userView.getConfirmPasswordField().getText();
-                
-                // Validate input
-                if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-                    JOptionPane.showMessageDialog(userView, "Please fill in all fields");
-                    return;
-                }
-                
-                // Validate email format
-                if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
-                    JOptionPane.showMessageDialog(userView, "Please enter a valid email address");
-                    return;
-                }
-                
-                // Check password match
-                if (!password.equals(confirmPassword)) {
-                    JOptionPane.showMessageDialog(userView, "Passwords do not match");
-                    return;
-                }
-                
-                // Create user object
-                User user = new User(username, email, password);
-                
-                // Check if user exists
-                if (userDao.checkUser(user)) {
+                String security_ans = userView.getSecurity_AnsField().getText();
+                if (name.isEmpty() || email.isEmpty() || password.isEmpty() || password.isEmpty()|| security_ans.isEmpty()) {
+            JOptionPane.showMessageDialog(userView, "All fields are required!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Check if passwords match
+        if (!password.equals(password)) {
+            JOptionPane.showMessageDialog(userView, "Passwords do not match!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }else if(!validation.isValidEmail(email)){
+            JOptionPane.showMessageDialog(userView, "Input valid email");
+        }else if(!validation.isValidusername(name)){
+            JOptionPane.showMessageDialog(userView, "Input valid username");
+        }else if(!validation.isValidPassword(password)){
+            JOptionPane.showMessageDialog(userView, "Input valid Password");
+        }else{
+                User user = new User(name, email, password, security_ans);
+                boolean check = userDao.checkUser(user);
+                if (check) {
                     JOptionPane.showMessageDialog(userView, "User already exists");
-                    return;
+
+                }else {
+                    userDao.signUp(user);
+                    JOptionPane.showMessageDialog(userView, "Signup successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    Login login = new Login();
+                    login.setVisible(true);
+                    userView.dispose();
+                          
                 }
-                
-                // Attempt to sign up
-               // Clear the form
-                
-                // Open login window and close signup
-                Login loginPage = new Login();
-                loginPage.setVisible(true);
-                userView.dispose();
-                
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(userView, 
-                    "Error during registration: " + ex.getMessage(),
-                    "Registration Error",
-                    JOptionPane.ERROR_MESSAGE);
+        }
+        }catch (Exception ex) {
+            JOptionPane.showMessageDialog(userView, "Error: " + ex.getMessage());
             }
         } 
     }

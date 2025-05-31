@@ -14,11 +14,11 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
-
 /**
  *
- * @author sahki
+ * @author sandhya sapkota
  */
+
 public class UserDao {
     Mysql mysql = new Mysql();
     
@@ -27,11 +27,16 @@ public class UserDao {
     public void signUp(User user) {
         // Code to save user to the database
         Connection conn = mysql.openConnection();
-        String sql = "INSERT INTO users (username,email, password) VALUES (?, ?, ?)";
+        if (conn == null) {
+            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, "Failed to establish database connection.");
+            return;
+        }
+        String sql = "INSERT INTO users (username,email, password,security_ans) VALUES (?, ?, ?, ?)";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, user.getUsername());
             pstmt.setString(2, user.getEmail());
             pstmt.setString(3, user.getPassword());
+            pstmt.setString(4, user.getSecurity_ans());
             pstmt.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
