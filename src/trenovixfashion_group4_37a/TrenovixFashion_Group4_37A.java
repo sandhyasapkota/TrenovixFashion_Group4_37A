@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package trenovixfashion_group4_37a;
-import view.*;
+import view.Welcome;
 import controller.SignupController;
 
 

@@ -8,9 +8,16 @@
             <file>file:/C:/Users/NITRO%20V%2015/Documents/NetBeansProjects/TrenovixFashion_Group4_37A/src/view/Login.java</file>
             <file>file:/C:/Users/NITRO%20V%2015/Documents/NetBeansProjects/TrenovixFashion_Group4_37A/src/view/ForgotPassword.java</file>
             <file>file:/C:/Users/NITRO%20V%2015/Documents/NetBeansProjects/TrenovixFashion_Group4_37A/src/view/SignUp.java</file>
-            <file>file:/C:/Users/NITRO%20V%2015/Documents/NetBeansProjects/TrenovixFashion_Group4_37A/src/view/AdminDashboard.java</file>
+            <file>file:/C:/Users/NITRO%20V%2015/Documents/NetBeansProjects/TrenovixFashion_Group4_37A/src/view/Overview.java</file>
+            <file>file:/C:/Users/NITRO%20V%2015/Documents/NetBeansProjects/TrenovixFashion_Group4_37A/src/controller/UserTableController.java</file>
+            <file>file:/C:/Users/NITRO%20V%2015/Documents/NetBeansProjects/TrenovixFashion_Group4_37A/src/Dao/UserDao.java</file>
+            <file>file:/C:/Users/NITRO%20V%2015/Documents/NetBeansProjects/TrenovixFashion_Group4_37A/src/view/UserTable.java</file>
+            <file>file:/C:/Users/NITRO%20V%2015/Documents/NetBeansProjects/TrenovixFashion_Group4_37A/src/controller/SignupController.java</file>
             <file>file:/C:/Users/NITRO%20V%2015/Documents/NetBeansProjects/TrenovixFashion_Group4_37A/src/view/CustomerOrders.java</file>
-            <file>file:/C:/Users/NITRO%20V%2015/Documents/NetBeansProjects/TrenovixFashion_Group4_37A/src/view/Welcome.java</file>
+            <file>file:/C:/Users/NITRO%20V%2015/Documents/NetBeansProjects/TrenovixFashion_Group4_37A/src/view/Orders.java</file>
+            <file>file:/C:/Users/NITRO%20V%2015/Documents/NetBeansProjects/TrenovixFashion_Group4_37A/src/view/Items.java</file>
+            <file>file:/C:/Users/NITRO%20V%2015/Documents/NetBeansProjects/TrenovixFashion_Group4_37A/src/view/HomePage.java</file>
+            <file>file:/C:/Users/NITRO%20V%2015/Documents/NetBeansProjects/TrenovixFashion_Group4_37A/src/database/Mysql.java</file>
         </group>
     </open-files>
 </project-private>

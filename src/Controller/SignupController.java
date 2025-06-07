@@ -68,7 +68,8 @@ public class SignupController {
                     userDao.signUp(user);
                     JOptionPane.showMessageDialog(userView, "Signup successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
                     Login login = new Login();
-                    login.setVisible(true);
+                    LoginController loginController = new LoginController(login);
+                    loginController.open();
                     userView.dispose();
                           
                 }

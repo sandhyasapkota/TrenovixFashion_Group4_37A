@@ -4,9 +4,8 @@
  */
 package view;
 
-import controller.*;
+import controller.LoginController;
 import javax.swing.JOptionPane;
-import view.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 

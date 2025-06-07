@@ -4,8 +4,10 @@
  */
 package controller;
 
-import dao.*;
-import view.*;
+import view.Login;
+import view.Overview;
+import view.HomePage;
+import dao.LoginDao;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
@@ -18,7 +20,7 @@ import model.User;
 public class LoginController {
     private final LoginDao loginDao = new LoginDao();
     private final Login login;
-    private final AdminDashboard admindashboard = new AdminDashboard();
+    private final Overview admindashboard = new Overview();
     private final HomePage homepage = new HomePage();
     
 

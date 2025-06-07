@@ -4,16 +4,19 @@
  */
 package view;
 
+import controller.LoginController;
+import controller.UserTableController;
+
 /**
  *
  * @author sandhya sapkota
  */
-public class AdminDashboard extends javax.swing.JFrame {
+public class Overview extends javax.swing.JFrame {
 
     /**
      * Creates new form AdminDashboard
      */
-    public AdminDashboard() {
+    public Overview() {
         initComponents();
     }
 
@@ -74,6 +77,11 @@ public class AdminDashboard extends javax.swing.JFrame {
         user_manageBtn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         user_manageBtn.setText("User Management");
         user_manageBtn.setBorder(null);
+        user_manageBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                user_manageBtnActionPerformed(evt);
+            }
+        });
 
         reviewBtn.setBackground(new java.awt.Color(217, 217, 217));
         reviewBtn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -85,6 +93,11 @@ public class AdminDashboard extends javax.swing.JFrame {
         logout_Btn.setForeground(new java.awt.Color(255, 0, 0));
         logout_Btn.setText("Logout");
         logout_Btn.setBorder(null);
+        logout_Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logout_BtnActionPerformed(evt);
+            }
+        });
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Trenovix.png"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -287,6 +300,21 @@ public class AdminDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_overviewBtnActionPerformed
 
+    private void user_manageBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user_manageBtnActionPerformed
+        UserTable userTable = new UserTable();
+        UserTableController controller = new UserTableController(userTable);
+        controller.loadUsers();
+        userTable.setVisible(true);
+    }//GEN-LAST:event_user_manageBtnActionPerformed
+
+    private void logout_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_BtnActionPerformed
+        Login login = new Login();
+        LoginController logincontroller = new LoginController(login);
+        logincontroller.open();
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logout_BtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -304,20 +332,21 @@ public class AdminDashboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Overview.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Overview.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Overview.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Overview.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminDashboard().setVisible(true);
+                new Overview().setVisible(true);
             }
         });
     }
@@ -343,4 +372,6 @@ public class AdminDashboard extends javax.swing.JFrame {
     private javax.swing.JButton reviewBtn;
     private javax.swing.JButton user_manageBtn;
     // End of variables declaration//GEN-END:variables
+
+
 }
