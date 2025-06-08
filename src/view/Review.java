@@ -333,6 +333,51 @@ public class Review extends javax.swing.JFrame {
         dashboard.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_OverViewActionPerformed
+    
+
+    private void OrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdersActionPerformed
+        // TODO add your handling code here:
+        CustomersOrders orders = new CustomersOrders();
+        orders.setLocationRelativeTo(null);
+        orders.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_OrdersActionPerformed
+
+    private void ItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemsActionPerformed
+        // TODO add your handling code here:
+        ItemsPage itemsPage = new ItemsPage();
+        controller.ProductController.attachAddProductToItemsPage(itemsPage);
+        itemsPage.setLocationRelativeTo(null);
+        itemsPage.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ItemsActionPerformed
+
+    private void UserManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserManagementActionPerformed
+        UserManagement userTable = new UserManagement();
+        Login login = new Login();
+        controller.UserTableController controller = new controller.UserTableController(userTable, login);
+        controller.loadUsers();
+        userTable.setLocationRelativeTo(null);
+        userTable.setVisible(true);
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_UserManagementActionPerformed
+
+    private void ReviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReviewActionPerformed
+        Review reviewsPage = new Review();
+        reviewsPage.setLocationRelativeTo(null);
+        reviewsPage.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ReviewActionPerformed
+
+    private void Order_LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Order_LogoutActionPerformed
+        Login login = new Login();
+        LoginController logincontroller = new LoginController(login);
+        logincontroller.open();
+        login.setLocationRelativeTo(null);
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Order_LogoutActionPerformed
+
     /**
      * @param args the command line arguments
      */
