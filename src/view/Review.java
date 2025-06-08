@@ -317,6 +317,22 @@ public class Review extends javax.swing.JFrame {
             SearchBar.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_SearchBarFocusGained
+    
+
+    private void SearchBarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SearchBarFocusLost
+        if (SearchBar.getText().isEmpty()) {
+            SearchBar.setText("Search");
+            SearchBar.setForeground(Color.GRAY);
+        }
+    }//GEN-LAST:event_SearchBarFocusLost
+
+    private void OverViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OverViewActionPerformed
+        // TODO add your handling code here:
+        Overview dashboard = new Overview();
+        dashboard.setLocationRelativeTo(null);
+        dashboard.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_OverViewActionPerformed
     /**
      * @param args the command line arguments
      */
