@@ -436,37 +436,5 @@ public class CheckoutForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
     // Getters for the form fields
-    public javax.swing.JTextField getEmail() {
-        return Email;
-    }
-    public javax.swing.JTextField getFirstName() {
-        return FirstName;
-    }
-    public javax.swing.JTextField getLastName() {
-        return LastName;
-    }
-    public javax.swing.JTextField getPhoneNumber() {
-        return PhoneNumber;
-    }
-    public javax.swing.JTextField getPostalCode() {
-        return PostalCode;
-    }
-    public javax.swing.JComboBox<String> getProvince() {
-        return Province;
-    }
-    public javax.swing.JComboBox<String> getCity() {
-        return City;
-    }
-    public javax.swing.JTextField getStreetAddress() {
-        return StreetAddress;
-    }
-    public javax.swing.JTextField getTole() {
-        return Tole;
-    }
-    public void addOrderBtnListener(ActionListener listener) {
-        OrderBtn.addActionListener(listener);
-    }
-    public javax.swing.JButton getOrderBtn() {
-        return OrderBtn;
-    }
+    
 }
