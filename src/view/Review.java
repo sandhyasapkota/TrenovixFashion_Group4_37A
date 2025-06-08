@@ -311,7 +311,12 @@ public class Review extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    private void SearchBarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SearchBarFocusGained
+        if (SearchBar.getText().equals("Search")) {
+            SearchBar.setText("");
+            SearchBar.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_SearchBarFocusGained
     /**
      * @param args the command line arguments
      */
