@@ -240,41 +240,7 @@ public class Cart extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CheckOutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckOutBtnActionPerformed
-        // TODO add your handling code here:
-        CheckoutForm checkoutForm = new CheckoutForm();
-        CheckoutController controller = new CheckoutController(checkoutForm, this); // Pass Cart reference
-        checkoutForm.setLocationRelativeTo(null);
-        checkoutForm.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_CheckOutBtnActionPerformed
-
-    private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DeleteBtnActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//        Home home = new Home();
-//        home.setLocationRelativeTo(null);
-//        home.setVisible(true);
-        this.dispose();// TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    public void loadCartItems() {
-        jPanel3.removeAll();
-        int userId = model.Session.currentUserId;
-        java.util.List<model.Product> cartItems = model.CartManager.getCartItems(userId);
-        double total = 0.0;
-        for (model.Product product : cartItems) {
-            CartCard card = new CartCard(product);
-            jPanel3.add(card);
-            total += product.getPrice() * product.getQuantity();
-        }
-        // Update total label (replace jLabel8 with your actual total label variable)
-        jLabel8.setText("Total: Rs " + String.format("%.2f", total));
-        jPanel3.revalidate();
-        jPanel3.repaint();
-    }
+    
     /**
      * @param args the command line arguments
      */
