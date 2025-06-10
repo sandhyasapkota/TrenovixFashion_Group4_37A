@@ -9,30 +9,26 @@ import java.util.List;
 public class ProductDao {
     Mysql mysql = new Mysql();
 
-    
-    public List<Product> getAllProducts() {
-        List<Product> products = new ArrayList<>();
-        String sql = "SELECT * FROM products";
+    public boolean addProduct(Product product) {
+        String sql = "INSERT INTO products (name, size, price, category, image_url, quantity, description) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = mysql.openConnection();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
-            while (rs.next()) {
-                Product product = new Product();
-                product.setId(rs.getInt("id"));
-                product.setName(rs.getString("name"));
-                product.setSize(rs.getString("size"));
-                product.setPrice(rs.getDouble("price"));
-                product.setCategory(rs.getString("category"));
-                product.setImageUrl(rs.getString("image_url"));
-                product.setQuantity(rs.getInt("quantity"));
-                product.setDescription(rs.getString("description")); // <-- add this line
-                products.add(product);
-            }
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, product.getName());
+            stmt.setString(2, product.getSize());
+            stmt.setDouble(3, product.getPrice());
+            stmt.setString(4, product.getCategory());
+            stmt.setString(5, product.getImageUrl());
+            stmt.setInt(6, product.getQuantity());
+            stmt.setString(7, product.getDescription()); // <-- add this line
+            int rows = stmt.executeUpdate();
+            return rows > 0;
         } catch (SQLException ex) {
             ex.printStackTrace();
+            return false;
         }
-        return products;
     }
+
+   
 
     public void deleteProduct(int id) {
         String sql = "DELETE FROM products WHERE id = ?";
