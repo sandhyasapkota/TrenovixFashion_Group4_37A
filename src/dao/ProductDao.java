@@ -28,7 +28,29 @@ public class ProductDao {
         }
     }
 
-   
+    public List<Product> getAllProducts() {
+        List<Product> products = new ArrayList<>();
+        String sql = "SELECT * FROM products";
+        try (Connection conn = mysql.openConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setName(rs.getString("name"));
+                product.setSize(rs.getString("size"));
+                product.setPrice(rs.getDouble("price"));
+                product.setCategory(rs.getString("category"));
+                product.setImageUrl(rs.getString("image_url"));
+                product.setQuantity(rs.getInt("quantity"));
+                product.setDescription(rs.getString("description")); // <-- add this line
+                products.add(product);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return products;
+    }
 
     public void deleteProduct(int id) {
         String sql = "DELETE FROM products WHERE id = ?";
