@@ -4,10 +4,8 @@
  */
 package controller;
 
-import view.Login;
-import view.Overview;
-import view.HomePage;
-import dao.LoginDao;
+import dao.*;
+import view.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
@@ -21,7 +19,8 @@ public class LoginController {
     private final LoginDao loginDao = new LoginDao();
     private final Login login;
     private final Overview admindashboard = new Overview();
-    private final HomePage homepage = new HomePage();
+    private final Home homepage = new Home();
+   
     
 
     public LoginController(Login login) {
@@ -52,22 +51,37 @@ public class LoginController {
                 boolean isExist = loginDao.userlogin(user);
 
                 
-                if (username.equals("admin") && password.equals("root")){
+                if (username.equals("admin") && password.equals("root")) {
                     admindashboard.setVisible(true);
+                    admindashboard.addLogoutListener(evt -> {
+                        admindashboard.dispose();
+                        login.setVisible(true);
+                    });
                     login.dispose();
                 }
                 else if (!isExist) {
-                    JOptionPane.showMessageDialog(login, "Invalid email or password.");
+                    JOptionPane.showMessageDialog(login, "Invalid username or password.");
                 } else {
                     JOptionPane.showMessageDialog(login, "Login successful! Welcome, " + user.getUsername());
                     // Proceed to dashboard or next screen here
                     homepage.setVisible(isExist);
                     login.dispose();
+//                    LoginController loginController = new LoginController(login);
+//                    loginController.open();
                     
                 }
             } catch (RuntimeException ex) {
                 JOptionPane.showMessageDialog(login, "Error: " + ex.getMessage());
             }
+        }
+    }
+    class LogoutBtnActionPerformed implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            admindashboard.dispose();
+            login.setVisible(true);
+            LoginController loginController = new LoginController(login);
+            loginController.open();
         }
     }
 }

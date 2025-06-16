@@ -17,11 +17,11 @@ public class UserTableDao {
         ResultSet rs = null;
         try {
             conn = mysql.openConnection(); // Make sure you have a mysql helper class
-            stmt = conn.prepareStatement("SELECT user_id, username, email, joined_date FROM users");
+            stmt = conn.prepareStatement("SELECT id, username, email, joined_date FROM users");
             rs = stmt.executeQuery();
             while (rs.next()) {
                 Object[] row = {
-                    rs.getInt("user_id"),
+                    rs.getInt("id"),
                     rs.getString("username"),
                     rs.getString("email"),
                     rs.getTimestamp("joined_date")

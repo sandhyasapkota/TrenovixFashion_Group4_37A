@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-import controller.LoginController;
+import view.*;
+import controller.*;
+import model.*;
 
 /**
  *

@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package trenovixfashion_group4_37a;
-import view.Welcome;
+import controller.ProductController;
+import view.*;
 import controller.SignupController;
 
 
@@ -24,6 +25,13 @@ public class TrenovixFashion_Group4_37A {
         // signup.setVisible(true);
           Welcome welcome = new Welcome();
             welcome.setVisible(true);
+            
+//            AddProduct add = new AddProduct();
+//        add.setVisible(true);
+//        ProductController product = new ProductController(add);
+//        product.open();
+        
+    }
     }
     
-}
+
