@@ -1,6 +1,7 @@
 package controller;
 
 import dao.UserTableDao;
+
 import java.util.List;
 import view.UserManagement;
 import view.Login;
@@ -14,6 +15,7 @@ public class UserTableController {
     public UserTableController(UserManagement userTable, Login login) {
         this.view = userTable;
         this.login = login;
+
     }
 
     public void loadUsers() {
@@ -25,6 +27,7 @@ public class UserTableController {
         }
     }
 
+
     public void showUserTable() {
         view.setVisible(true);
         view.addLogoutListener(e -> {
@@ -32,4 +35,5 @@ public class UserTableController {
             login.setVisible(true); // Show the login window
         });
     }
+
 }

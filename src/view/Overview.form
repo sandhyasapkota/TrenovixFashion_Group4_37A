@@ -59,7 +59,9 @@
                               <Component id="add_itemsBtn" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="user_manageBtn" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="reviewBtn" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
+
                               <Component id="LogoutBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -89,7 +91,9 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="reviewBtn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="98" max="32767" attributes="0"/>
+
                   <Component id="LogoutBtn" min="-2" max="-2" attributes="0"/>
+
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -126,9 +130,11 @@
               <Border info="null"/>
             </Property>
           </Properties>
+
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="c_ordersBtnActionPerformed"/>
           </Events>
+
         </Component>
         <Component class="javax.swing.JButton" name="add_itemsBtn">
           <Properties>
@@ -143,9 +149,11 @@
               <Border info="null"/>
             </Property>
           </Properties>
+
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_itemsBtnActionPerformed"/>
           </Events>
+
         </Component>
         <Component class="javax.swing.JButton" name="user_manageBtn">
           <Properties>
@@ -178,7 +186,9 @@
             </Property>
           </Properties>
         </Component>
+
         <Component class="javax.swing.JButton" name="LogoutBtn">
+
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d9" green="d9" red="d9" type="rgb"/>
@@ -195,7 +205,9 @@
             </Property>
           </Properties>
           <Events>
+
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogoutBtnActionPerformed"/>
+
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">

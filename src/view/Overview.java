@@ -5,7 +5,9 @@
 package view;
 
 import controller.LoginController;
+
 import controller.ProductController;
+
 import controller.UserTableController;
 
 /**
@@ -20,6 +22,7 @@ public class Overview extends javax.swing.JFrame {
     public Overview() {
         initComponents();
     }
+
 
     private static Overview instance = null;
 
@@ -36,6 +39,7 @@ public class Overview extends javax.swing.JFrame {
         instance = null;
     }
 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,7 +55,9 @@ public class Overview extends javax.swing.JFrame {
         add_itemsBtn = new javax.swing.JButton();
         user_manageBtn = new javax.swing.JButton();
         reviewBtn = new javax.swing.JButton();
+
         LogoutBtn = new javax.swing.JButton();
+
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -83,21 +89,25 @@ public class Overview extends javax.swing.JFrame {
         c_ordersBtn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         c_ordersBtn.setText("Customer Orders");
         c_ordersBtn.setBorder(null);
+
         c_ordersBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_ordersBtnActionPerformed(evt);
             }
         });
 
+
         add_itemsBtn.setBackground(new java.awt.Color(217, 217, 217));
         add_itemsBtn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         add_itemsBtn.setText("Items");
         add_itemsBtn.setBorder(null);
+
         add_itemsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 add_itemsBtnActionPerformed(evt);
             }
         });
+
 
         user_manageBtn.setBackground(new java.awt.Color(217, 217, 217));
         user_manageBtn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -114,6 +124,7 @@ public class Overview extends javax.swing.JFrame {
         reviewBtn.setText("Review");
         reviewBtn.setBorder(null);
 
+
         LogoutBtn.setBackground(new java.awt.Color(217, 217, 217));
         LogoutBtn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         LogoutBtn.setForeground(new java.awt.Color(255, 0, 0));
@@ -122,6 +133,7 @@ public class Overview extends javax.swing.JFrame {
         LogoutBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogoutBtnActionPerformed(evt);
+
             }
         });
 
@@ -146,7 +158,9 @@ public class Overview extends javax.swing.JFrame {
                             .addComponent(add_itemsBtn)
                             .addComponent(user_manageBtn)
                             .addComponent(reviewBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+
                             .addComponent(LogoutBtn)))
+
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -170,7 +184,9 @@ public class Overview extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(reviewBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+
                 .addComponent(LogoutBtn)
+
                 .addGap(32, 32, 32))
         );
 
@@ -327,19 +343,24 @@ public class Overview extends javax.swing.JFrame {
     }//GEN-LAST:event_overviewBtnActionPerformed
 
     private void user_manageBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user_manageBtnActionPerformed
+
         UserManagement userTable = new UserManagement();
         Login login = new Login(); // FIX: create a Login instance
         UserTableController controller = new UserTableController(userTable, login);
+
         controller.loadUsers();
         userTable.setVisible(true);
     }//GEN-LAST:event_user_manageBtnActionPerformed
 
+
     private void LogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBtnActionPerformed
+
         Login login = new Login();
         LoginController logincontroller = new LoginController(login);
         logincontroller.open();
         login.setVisible(true);
         this.dispose();
+
     }//GEN-LAST:event_LogoutBtnActionPerformed
 
     private void c_ordersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_ordersBtnActionPerformed
@@ -353,6 +374,7 @@ public class Overview extends javax.swing.JFrame {
     ProductController.attachAddProductToItemsPage(itemsPage);
     itemsPage.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_add_itemsBtnActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -391,7 +413,9 @@ public class Overview extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+
     private javax.swing.JButton LogoutBtn;
+
     private javax.swing.JButton add_itemsBtn;
     private javax.swing.JButton c_ordersBtn;
     private javax.swing.JLabel jLabel1;
@@ -407,12 +431,16 @@ public class Overview extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTextField jTextField1;
+
+
     private javax.swing.JButton overviewBtn;
     private javax.swing.JButton reviewBtn;
     private javax.swing.JButton user_manageBtn;
     // End of variables declaration//GEN-END:variables
+
 public void addLogoutListener(java.awt.event.ActionListener listener) {
         LogoutBtn.addActionListener(listener);
     }
+
 
 }

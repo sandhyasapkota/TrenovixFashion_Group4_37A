@@ -6,8 +6,10 @@ package view;
 import controller.ForgotPasswordController;
 import javax.swing.JOptionPane;
 import controller.SignupController;
+
 import model.User;
 import controller.LoginController;
+
 import java.awt.Color;
 import java.awt.Desktop.Action;
 import java.awt.event.ActionListener;
@@ -149,6 +151,7 @@ public class Login extends javax.swing.JFrame {
                                 .addComponent(L_password, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
+
                         .addGap(141, 141, 141)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(L_Signup, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -156,6 +159,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(174, 174, 174)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+
                 .addContainerGap(76, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -227,7 +231,9 @@ public class Login extends javax.swing.JFrame {
 
     private void L_SignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L_SignupActionPerformed
         // TODO add your handling code here:
+
         Signup signup = new Signup();
+
         SignupController signupController = new SignupController(signup);
         signupController.open();
         signup.setVisible(true);

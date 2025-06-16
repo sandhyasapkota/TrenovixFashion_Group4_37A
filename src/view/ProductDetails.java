@@ -4,6 +4,7 @@
  */
 package view;
 
+
 import model.Product; // Add this import
 
 /**
@@ -24,9 +25,11 @@ public class ProductDetails extends javax.swing.JFrame {
     }
 
     // Existing default constructor (optional, for testing)
+
     public ProductDetails() {
         initComponents();
     }
+
 
     // Add this method to update the UI with product info
     private void showProductDetails() {
@@ -50,6 +53,7 @@ public class ProductDetails extends javax.swing.JFrame {
         }
     }
 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,6 +62,7 @@ public class ProductDetails extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
 
         jButton3 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -76,9 +81,11 @@ public class ProductDetails extends javax.swing.JFrame {
 
         jButton3.setText("jButton3");
 
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -175,12 +182,16 @@ public class ProductDetails extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SendRev, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(20, 20, 20))
+
+
+                        
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -190,10 +201,12 @@ public class ProductDetails extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
 
     /**
      * @param args the command line arguments
@@ -223,6 +236,8 @@ public class ProductDetails extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
+
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -232,6 +247,7 @@ public class ProductDetails extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+
     private javax.swing.JButton AddCart;
     private javax.swing.JButton Min;
     private javax.swing.JLabel Quantity;
@@ -246,5 +262,6 @@ public class ProductDetails extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JButton max;
+
     // End of variables declaration//GEN-END:variables
 }
