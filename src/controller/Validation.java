@@ -10,16 +10,18 @@ package controller;
  */
 public class Validation {
 //    private static final String phoneRegex = "^(98|97)[0-9]{8}$";
-    private static final String usernameRegex = "^[A-Za-z0-9]{3,}$"; // At least 3 alphanumeric characters
+
+    private static final String usernameRegex = "^[A-Za-z0-9]+$"; // At least 3 alphanumeric characters
+
 
     private static final String emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
 
 //    private static final String passwordRegex = "^(?=.[A-Z])(?=.[a-z])(?=.\\d)(?=.[@#$!%?&])[A-Za-z\\d@#$!%?&]{8,}$";
     private static final String passwordRegex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@#$!%*?&_-]).{8,}$";
 
-//    public boolean isValidPhoneNumber(String phoneNum){
-//        return phoneNum.matches(phoneRegex);
-//    }
+
+
+
     public boolean isValidusername(String name){
         return name.matches(usernameRegex);
     }

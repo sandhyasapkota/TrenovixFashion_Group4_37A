@@ -1,30 +1,21 @@
 package controller;
 
 import dao.UserTableDao;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import view.UserTable;
-import javax.swing.table.DefaultTableModel;
+
 import java.util.List;
+import view.UserManagement;
 import view.Login;
+import javax.swing.table.DefaultTableModel;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author sandhya sapkota
- */
 public class UserTableController {
-    private final UserTable view;
+    private final UserManagement view;
     private final UserTableDao dao = new UserTableDao();
-    private final UserTable usertable = new UserTable();
-    private final Login login = new Login();
+    private final Login login;
 
-    public UserTableController(UserTable view) {
-        this.view = view;
+    public UserTableController(UserManagement userTable, Login login) {
+        this.view = userTable;
+        this.login = login;
+
     }
 
     public void loadUsers() {
@@ -35,25 +26,14 @@ public class UserTableController {
             model.addRow(row);
         }
     }
-    class LogoutBtnActionPerformed implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            view.dispose(); // Use the actual view
-            Login login = new Login();
-            login.setVisible(true);
-            LoginController loginController = new LoginController(login);
-            loginController.open();
-        }
+
+
+    public void showUserTable() {
+        view.setVisible(true);
+        view.addLogoutListener(e -> {
+            view.dispose();      // Dispose the current UserManagement window
+            login.setVisible(true); // Show the login window
+        });
     }
-     class LogoutBtn2ActionPerformed implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            view.dispose(); // Use the actual view
-            Login login = new Login();
-            login.setVisible(true);
-            LoginController loginController = new LoginController(login);
-            loginController.open();
-        }
-     }
-    
+
 }

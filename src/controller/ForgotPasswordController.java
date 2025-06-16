@@ -5,10 +5,8 @@ import view.ForgotPassword;
 import javax.swing.JOptionPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-/**
- *
- * @author sandhya sapkota
- */
+
+
 
 public class ForgotPasswordController {
     private final ForgotPassword forgotPasswordView;
@@ -55,7 +53,10 @@ public class ForgotPasswordController {
             boolean updated = forgotDao.updatePasswordWithSecurityAnswer(username, email, securityAnswer, newPassword);
             if (updated) {
                 JOptionPane.showMessageDialog(forgotPasswordView, "Password updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                
+
+                forgotPasswordView.dispose();
+                System.out.println(forgotPasswordView.getSecurityAnswer());
+
             } else {
                 JOptionPane.showMessageDialog(forgotPasswordView, "Invalid details or security answer.", "Error", JOptionPane.ERROR_MESSAGE);
             }

@@ -4,27 +4,19 @@
  */
 package dao;
 
-import database.Mysql;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import database.*;
 
 /**
  *
  * @author sandhya sapkota
  */
 public class Forgot {
-    
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-
     Mysql mysql = new Mysql();
     
     public boolean validateSecurityAnswer(String username, String email, String security_ans) {
@@ -76,4 +68,3 @@ public class Forgot {
         return false; // Return false if user not found or other issues
     }
 }
-

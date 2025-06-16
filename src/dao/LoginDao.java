@@ -27,7 +27,7 @@ public class LoginDao {
             Logger.getLogger(LoginDao.class.getName()).log(Level.SEVERE, "Failed to establish database connection.");
             return false;
         }
-        String sql = "SELECT * FROM users WHERE username = ? or password = ?";
+        String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, user.getUsername());
             pstmt.setString(2, user.getPassword());
